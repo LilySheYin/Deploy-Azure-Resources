@@ -25,7 +25,7 @@ resource "random_string" "rs" {
 
 resource "azurerm_resource_group" "rg" {
     name     = local.resourceGroupName
-    location = "UK South"
+    location = "Australia Central"
 }
 
 resource "azurerm_app_service_plan" "app_service_plan" {
