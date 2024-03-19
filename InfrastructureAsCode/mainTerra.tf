@@ -13,7 +13,7 @@ locals {
   webAppName         = "${random_string.rs.result}-${var.environment}"
   appServicePlanName = "${random_string.rs.result}-plan"
   sqlServerName      = "${lower(random_string.rs.result)}-sql"
-  sku                = "S1"
+  sku                = "F1"
   sql_administrator_username = "superadmin"
   sql_administrator_password = "${random_string.rs.result}123!"
 }
@@ -34,7 +34,7 @@ resource "azurerm_app_service_plan" "app_service_plan" {
   resource_group_name = azurerm_resource_group.rg.name
 
   sku {
-    tier = "Standard"
+    tier = "Free"
     size = local.sku
   }
 }
